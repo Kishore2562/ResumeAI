@@ -11,7 +11,7 @@ const guidanceList  = document.getElementById("guidanceList");
 const beforeCanvas  = document.getElementById("beforeChart");
 const afterCanvas   = document.getElementById("afterChart");
 
-const API_URL = "http://127.0.0.1:8000/analyze/";
+const API_URL = "https://resumeai-backend-e3ks.onrender.com/analyze/";
 
 let extractedSkills = [];
 let matchedSkills   = [];
