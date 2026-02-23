@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+backend/venv/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Reports (optional – if you don’t want PDFs in repo)
+# reports/*.pdf

@@ -1,0 +1,159 @@
+:root {
+  --bg: #1a1a2e;
+  --panel: #24243e;
+  --accent1: #e9a6a6;
+  --accent2: #3ba4f9;
+  --text: #e0e0f2;
+  --chip: #34345c;
+  --chip-missing: #8b2d2d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+.topbar {
+  padding: 18px;
+  background: linear-gradient(180deg, #12122a, #1a1a2e);
+}
+
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 460px;
+  gap: 22px;
+  padding: 20px;
+}
+
+.card {
+  background: var(--panel);
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+/* REDUCE JD + UPLOAD SIZE */
+textarea {
+  width: 100%;
+  min-height: 90px;      /* 🔽 reduced */
+  max-height: 120px;
+  background: #11112a;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #33335a;
+  resize: vertical;
+}
+
+.primary {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  border: none;
+  padding: 9px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* SKILLS */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: var(--chip);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.chip.missing {
+  background: var(--chip-missing);
+}
+
+.chip button {
+  margin-left: 6px;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* CHARTS — GIVE SPACE, DON’T CUT */
+.meter-wrap {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.meter-card {
+  width: 240px;
+  height: 240px;   /* 🔼 increased */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.meter-card canvas {
+  width: 240px !important;
+  height: 240px !important;
+}
+
+/* GUIDANCE */
+#guidanceList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#guidanceList .guide {
+  background: #1b1b36;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+#guidanceList strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent2);
+}
+
+#guidanceList ul {
+  margin: 6px 0 0 18px;
+}
+
+#guidanceList li {
+  margin-bottom: 4px;
+  font-size: 14px;
+}

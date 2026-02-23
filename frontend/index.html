@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ResumeAI – Skill Matcher & Learning Roadmap Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body data-theme="dark">
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">GSK</div>
+    <div>
+      <h1>ResumeAI – Skill Matcher & Learning Path Provider</h1>
+      <p>Upload resume • Paste JD • Add missing skills • Get guided learning paths</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="left">
+
+    <div class="card">
+      <label>Upload Resume (PDF or DOCX)</label>
+      <input id="resumeInput" type="file" accept=".pdf,.docx">
+    </div>
+
+    <div class="card">
+      <label>Paste Job Description</label>
+      <textarea id="jobDesc" placeholder="Paste job description here..."></textarea>
+      <button id="analyzeBtn" class="primary">Analyze & Match Skills</button>
+    </div>
+
+    <div class="card">
+      <h3>Extracted Skills</h3>
+      <div id="extractedChips" class="chips"></div>
+
+      <h3>Missing Skills</h3>
+      <div id="missingChips" class="chips"></div>
+
+      <h3>Final Skills</h3>
+      <div id="finalChips" class="chips"></div>
+
+      <button id="generateBtn" class="primary">Generate Skill Analysis Appendix</button>
+    </div>
+
+  </section>
+
+  <aside class="right">
+
+    <div class="card">
+      <h3 style="text-align:center">Match Progress</h3>
+      <div class="meter-wrap">
+        <div class="meter-card">
+          <canvas id="beforeChart"></canvas>
+          <p>Before</p>
+        </div>
+        <div class="meter-card">
+          <canvas id="afterChart"></canvas>
+          <p>After</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Guidance & Certifications</h3>
+      <div id="guidanceList"></div>
+    </div>
+
+  </aside>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
