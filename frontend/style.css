@@ -17,6 +17,7 @@ body {
   font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -29,6 +30,7 @@ body {
   display: flex;
   gap: 14px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -58,10 +60,10 @@ body {
   margin-bottom: 14px;
 }
 
-/* REDUCE JD + UPLOAD SIZE */
+/* INPUTS */
 textarea {
   width: 100%;
-  min-height: 90px;      /* 🔽 reduced */
+  min-height: 90px;
   max-height: 120px;
   background: #11112a;
   color: white;
@@ -69,6 +71,10 @@ textarea {
   padding: 10px;
   border: 1px solid #33335a;
   resize: vertical;
+}
+
+input[type="file"] {
+  color: var(--text);
 }
 
 .primary {
@@ -108,17 +114,18 @@ textarea {
   cursor: pointer;
 }
 
-/* CHARTS — GIVE SPACE, DON’T CUT */
+/* CHARTS */
 .meter-wrap {
   display: flex;
   gap: 30px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .meter-card {
   width: 240px;
-  height: 240px;   /* 🔼 increased */
+  height: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,8 +133,8 @@ textarea {
 }
 
 .meter-card canvas {
-  width: 240px !important;
-  height: 240px !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* GUIDANCE */
@@ -147,6 +154,7 @@ textarea {
   display: block;
   margin-bottom: 6px;
   color: var(--accent2);
+  font-size: 16px;
 }
 
 #guidanceList ul {
@@ -156,4 +164,51 @@ textarea {
 #guidanceList li {
   margin-bottom: 4px;
   font-size: 14px;
+}
+
+/* MOBILE & TABLET */
+@media (max-width: 900px) {
+
+  .container {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .card {
+    margin-bottom: 16px;
+  }
+
+  .meter-wrap {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .meter-card {
+    width: 200px;
+    height: 200px;
+  }
+
+  textarea {
+    min-height: 120px;
+    font-size: 14px;
+  }
+
+  input[type="file"] {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .chip {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 }
