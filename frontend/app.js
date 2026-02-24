@@ -46,7 +46,7 @@ function createDonut(ctx) {
       }]
     },
     options: {
-      responsive: false,
+      responsive: true,
       maintainAspectRatio: false,
       cutout: "72%",
       plugins: { legend: { display: false } }
